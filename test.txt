@@ -1,0 +1,20 @@
+Running `rake test:cardspring` attached to terminal... tput: unknown terminal "linux"
+tput: unknown terminal "linux"
+up, run.1
+DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/Rakefile:7)
+DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/Rakefile:7)
+Running CardSpring integration tests:
+[cardspring] Creating app for business l5sxg80QSa7O
+
+Sent mail to cardspring-test@email.com (709ms)
+Amazon SES Send Error: Address blacklisted.
+[cardspring] Creating user 13
+[cardspring] Enrolling user 13 in app PT0YvZYt8RH0
+[cardspring] Creating card 9471 with expiration 2014-01 for user 13
+Sleeping..........
+
+SUCCESS - Cardspring integration testing was successful
+Cleaning up cardspring integration test artifacts.
+[cardspring] Deleting app PT0YvZYt8RH0 of business l5sxg80QSa7O
+[cardspring] Deleting card 29YyFcgy7rG7 for user 13
+[cardspring] Deleting user 13
