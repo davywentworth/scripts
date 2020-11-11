@@ -1,0 +1,39 @@
+[user]
+	name = Davy Wentworth
+	email = davy.wentworth@gmail.com
+[github]
+	user = davywentworth
+	token = eeba256ada733f5fa3b7fa0457102c52
+[core]
+	editor = vi
+[heroku]
+	account = thanx
+[alias]
+   # git status shortcut
+   st = status
+   # git checkout shortcut
+   co = checkout
+   # given a username or an email address shows the name and email address of the author
+   whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+   # given a commit name shows its hash and short log (i.e. git whatis someBranchName)
+   whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+   # list all aliases
+   aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
+   # sexier looking shortlog; git lg FROM..TO
+   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+         count = shortlog -s -n
+   # short version of cherry-pick
+   pick = cherry-pick
+   # show an ASCII version of the commit tree
+   tree = log --graph --all --decorate --abbrev-commit --pretty=oneline -n10
+   # browse the current head on github
+   bro = !"hub browse -- commit/`git rev-parse HEAD`"
+   ##
+   # Quickly Commit / Uncommit Work-In-Progress
+   # By David Gageot (http://gist.github.com/492227):
+   wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\""
+   unwip = !"git log -n 1 | grep -q -c wip && git reset HEAD~1"
+[mergetool "opendiff"]
+	trustExitCode = true
+[merge]
+	tool = opendiff
