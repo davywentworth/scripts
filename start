@@ -2,15 +2,14 @@
 
 dir = Dir.pwd.split('/').last
 options = {
-  'thanx-core' => 'OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES bundle exec rake s',
+  'thanx-core' => 'OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES rails s puma -p 7000',
   'thanx-web' => 'OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES bundle exec rake s',
-  'thanx-merchant-api' => 'rails s webrick -p 5000',
-  'thanx-merchant-api-new' => 'rails s webrick -p 5001',
+  'thanx-merchant-api-new' => 'bundle; rails s webrick -p 5001',
   'thanx-admin' => 'bundle exec rails s webrick -p 5002',
   'thanx-merchant-ui' => 'yarn start',
   'thanx-signup' => 'bundle exec rails s -p 3000',
   'thanx-mobile' => 'bundle exec rake s',
-  'thanx-api' => 'bundle exec rails s -p 7001',
+  'thanx-api' => 'bundle exec rails s webrick -p 7001',
   'thanx-signup-ui' => 'yarn start',
   'thanx-ordering-ui' => 'yarn start'
 }
