@@ -37,3 +37,14 @@
 	trustExitCode = true
 [merge]
 	tool = opendiff
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[checkout]
+	defaultRemote = origin
+[init]
+	templatedir = ~/.git-templates
+[rebase]
+    instructionFormat = %s [%an]
